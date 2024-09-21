@@ -51,7 +51,7 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: respon.height * 0.05),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Image.asset('assets/Sign Up..png')],
+                    children: [Image.asset('assets/SignUP.png')],
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -121,6 +121,8 @@ class _RegisterState extends State<Register> {
                       Image.asset('assets/Facebook.png'),
                     ],
                   ),
+                  SizedBox(height: respon.height * 0.01,),
+                  Text('© 2024 Robet,reiizuko', style: TextStyle(fontWeight: FontWeight.w400),),
                 ],
               ),
             ),
