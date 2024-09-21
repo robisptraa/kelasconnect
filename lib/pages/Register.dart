@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:firstlearnapk/pages/Register.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   bool _hide = true;
 
-  //fungsi hide paswordl
   void _hidepw() {
     setState(() {
       _hide = !_hide;
@@ -20,9 +18,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    //fungsi responsip
     final respon = MediaQuery.of(context).size;
-    //masuk widget
     return Scaffold(
       backgroundColor: Colors.purple,
       body: Stack(
@@ -55,16 +51,7 @@ class _LoginState extends State<Login> {
                   SizedBox(height: respon.height * 0.05),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset('assets/3dicons.png'),
-                      Image.asset('assets/logo2.png')
-                    ],
-                  ),
-                  Text(
-                    "Welcone to kelas connect",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: respon.width * 0.04),
+                    children: [Image.asset('assets/Sign Up..png')],
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -76,7 +63,7 @@ class _LoginState extends State<Login> {
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person),
-                            label: Text("username"),
+                            label: Text("emailadress"),
                             border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.circular(respon.width * 0.05),
@@ -110,38 +97,13 @@ class _LoginState extends State<Login> {
                             minimumSize: Size(double.infinity, 50),
                             backgroundColor: Colors.purple,
                           ),
-                          child: Text('Login',
+                          child: Text('Sign Up',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: respon.width * 0.04)),
                         ),
                       ],
-                    ),
-                  ),
-                  Text(
-                    "You dont a have account?",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: respon.width * 0.03),
-                  ),
-                  SizedBox(height: respon.width * 0.01),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Register()),
-                      );
-                    },
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.w600,
-                        fontSize: respon.width * 0.03,
-                        decoration: TextDecoration.underline,
-                      ),
                     ),
                   ),
                   Text(

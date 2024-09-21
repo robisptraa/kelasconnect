@@ -9,8 +9,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Login(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Login(),
+        '/register': (context) => Register(),
+      },
     );
   }
 }
 
+class Register extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Register'),
+        backgroundColor: Colors.purple,
+      ),
+      body: Center(
+        child: Text('Register Page - Add your registration form here'),
+      ),
+    );
+  }
+}
