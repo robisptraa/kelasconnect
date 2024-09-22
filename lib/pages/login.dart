@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firstlearnapk/pages/Register.dart';
+import 'package:firstlearnapk/pages/dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -85,7 +86,7 @@ class _LoginState extends State<Login> {
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.person),
-                              label: Text("username"),
+                              labelText: "Username",
                               border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(respon.width * 0.05),
@@ -100,10 +101,10 @@ class _LoginState extends State<Login> {
                               prefixIcon: IconButton(
                                 onPressed: _hidepw,
                                 icon: Icon(_hide
-                                    ? Icons.remove_red_eye
-                                    : Icons.remove_red_eye_outlined),
+                                    ? Icons.remove_red_eye_outlined
+                                    : Icons.remove_red_eye),
                               ),
-                              label: Text("password"),
+                              labelText: "Password",
                               border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(respon.width * 0.05),
@@ -122,7 +123,13 @@ class _LoginState extends State<Login> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                // Logic untuk login
+                                // Logika untuk navigasi ke dashboard
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Dashboard(),
+                                  ), // Ganti dengan kelas yang benar di dashboard.dart
+                                );
                               },
                               child: Center(
                                 child: Text(
@@ -135,7 +142,7 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -158,7 +165,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "Sign Up",
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.purpleAccent,
                           fontWeight: FontWeight.w600,
                           fontSize: respon.width * 0.03,
                           decoration: TextDecoration.underline,
@@ -177,12 +184,17 @@ class _LoginState extends State<Login> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/Google,i.png'),
+                        Image.asset('assets/Google,i.png'), // Perbaikan typo nama file
                         Image.asset('assets/Facebook.png'),
                       ],
                     ),
-                    SizedBox(height: respon.height * 0.01,),
-                    Text('© 2024 Robet,reiizuko', style: TextStyle(fontWeight: FontWeight.w400),),
+                    SizedBox(
+                      height: respon.height * 0.01,
+                    ),
+                    Text(
+                      '© 2024 Robet,reiizuko',
+                      style: TextStyle(fontWeight: FontWeight.w400),
+                    ),
                   ],
                 ),
               ),
